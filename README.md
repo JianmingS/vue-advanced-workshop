@@ -1,5 +1,8 @@
 # Vue Advanced Workshop
 
+来源：
+https://www.bilibili.com/video/BV1d4411v7UX
+
 This is the companion repository to the Vue Advanced Workshop.
 
 ## Prerequisites

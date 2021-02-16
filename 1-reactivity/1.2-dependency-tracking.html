@@ -10,12 +10,14 @@ window.Dep = class Dep {
       if (activeUpdate) {
         // register the current active update as a subscriber
         this.subscribers.add(activeUpdate)
+        console.log('depend')
       }
     }
 
     notify () {
       // run all subscriber functions
       this.subscribers.forEach(subscriber => subscriber())
+      console.log('notify')
     }
 }
 
@@ -24,7 +26,9 @@ let activeUpdate
 function autorun (update) {
   function wrappedUpdate () {
     activeUpdate = wrappedUpdate
+    console.log(111)
     update()
+    console.log(222)
     activeUpdate = null
   }
   wrappedUpdate()

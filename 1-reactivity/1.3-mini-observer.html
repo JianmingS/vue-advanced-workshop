@@ -17,12 +17,14 @@ function observe (obj) {
     Object.defineProperty(obj, key, {
       get () {
         dep.depend()
+        console.log('depend')
         return internalValue
       },
       set (newValue) {
         const isChanged = internalValue !== newValue
         if (isChanged) {
           internalValue = newValue
+          console.log('notify')
           dep.notify()
         }
       }
